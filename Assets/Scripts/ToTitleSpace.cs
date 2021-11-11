@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Erase : MonoBehaviour
+public class ToTitleSpace : MonoBehaviour
 {
-    public GameObject masterObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +14,8 @@ public class Erase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    
-    private void OnCollisionEnter(Collision collision) {
-        masterObj.GetComponent<GameMaster>().boxNum--;
-        Destroy(gameObject);
+        if (Input.GetKey(KeyCode.Space)) {
+            SceneManager.LoadScene("Title");
+        }
     }
 }
